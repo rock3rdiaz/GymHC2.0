@@ -1,0 +1,5 @@
+select tipo, nombres, fecha from Cita inner join Usuario on Usuario_idUsuario = Usuario.idUsuario
+where estado = 'pendiente' order by fecha asc;
+
+select tipo, Usuario_idUsuario from Cita where estado = 'pendiente';
+

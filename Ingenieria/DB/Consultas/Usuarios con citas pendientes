@@ -1,0 +1,13 @@
+select apellidos, nombres, tipo from Usuario inner join Cita on
+Cita.Usuario_idUsuario = idUsuario where tipo='medica';
+
+#Usuarios que poseen citas pendientes el dia actual
+select apellidos, nombres, fecha_nacimiento, ocupacion, tipo, estado, fecha from Usuario inner join Cita on
+Cita.Usuario_idUsuario = idUsuario where estado = 'pendiente' and tipo='medica' and
+fecha between CONCAT(CURDATE(), ' 00:00:00') AND CONCAT(CURDATE(), ' 23:59:59') order by fecha ASC;
+
+select CONCAT(CURDATE(),' 00:00:00');
+
+select idUsuario, apellidos, nombres, tipo from Usuario, Cita;
+
+select * from Usuario;

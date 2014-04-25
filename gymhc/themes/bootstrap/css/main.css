@@ -1,0 +1,43 @@
+/***************************** Adicionadas por rocker ***************************/
+
+#first_header{
+	background-color: #E10000 !important
+}
+
+/* <figure> principal de la pp */
+#first_figure{
+	margin:0 auto 0 auto !important;
+}
+
+#img_banner{	
+	width: auto !important;	
+	height: 100px;
+}
+
+a{
+	color: #ED1B24 !important;
+}
+
+button.btn-danger{
+	background-color: #ED1B24 !important;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{
+	background-color: #979797 !important;
+}
+
+/*Titlulos de las paginas principales*/
+.titles{
+	text-align: center !important;
+	color:  #ED1B24 !important;
+}
+
+/*Ganancias*/
+.up{
+	background-color: #C5FBBD !important;
+}
+
+/*Perdidas*/
+.down{
+	background-color: #FF7272 !important;
+}
