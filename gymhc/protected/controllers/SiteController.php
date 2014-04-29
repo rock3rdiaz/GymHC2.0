@@ -72,6 +72,7 @@ class SiteController extends Controller
 
 				switch( $empleado->idCargo0->nombre ){
 
+					//Fisioterapeuta
 					case 'fisioterapeuta':
 
 						Yii::app()->getSession()->add('empleado', $empleado );					
@@ -79,10 +80,11 @@ class SiteController extends Controller
 
 						break;
 
+					//Medioo general
 					case 'medico general':
 						
 						Yii::app()->getSession()->add('empleado', $empleado);					
-						$this->redirect(array('fisio/default/index'));
+						$this->redirect(array('medico/default/index'));
 
 						break;
 				}	

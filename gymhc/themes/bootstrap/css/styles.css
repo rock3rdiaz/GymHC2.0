@@ -6,3 +6,8 @@
 .titles{
 	text-align: center !important;
 }
+
+/*Cambio del color de fondo de los componentes que se encuentren desabilitados*/
+input[disabled], input[readonly], textarea[disabled], textarea[readonly] {
+	background-color: #34495E !important;
+}

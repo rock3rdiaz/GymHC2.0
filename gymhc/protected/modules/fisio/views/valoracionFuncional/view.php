@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
         'alerts'=>array( // configurations per alert type
             'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'&times;'), // success, info, warning, error or danger
        	),
-); ?>
+)); ?>
 
 <h1 class="titles">Detalles de la valoracion funcional No. <?php echo $model->idValoracion_funcional; ?></h1>
 

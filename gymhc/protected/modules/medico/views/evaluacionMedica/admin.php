@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Mis valoracion funcionales'=>array('admin'),
+	'Mis evaluaciones medicas'=>array('admin'),
 	'Adminstrar',
 );
 
 /*$this->menu=array(
-	array('label'=>'List ValoracionFuncional','url'=>array('index')),
-	array('label'=>'Create ValoracionFuncional','url'=>array('create')),
+	array('label'=>'List EvaluacionMedica','url'=>array('index')),
+	array('label'=>'Create EvaluacionMedica','url'=>array('create')),
 );*/
 
 Yii::app()->clientScript->registerScript('search', "
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('valoracion-funcional-grid', {
+	$.fn.yiiGridView.update('evaluacion-medica-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1 class='titles'>Mis valoraciones funcionales</h1>
+<h1 class='titles'>Mis evaluaciones m&eacute;dicas</h1>
 
 <?php echo CHtml::link('Controles de busqueda','#',array('class'=>'search-button btn')); ?>
 <div class="search-form" style="display:none">
@@ -32,32 +32,26 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
-
 <?php $this->widget('bootstrap.widgets.TbButton', array(
 	'buttonType'=>'buttonLink',
-	'url'=>array( '/fisio/valoracionFuncional/create' ),
+	'url'=>array( '/medico/evaluacionMedica/create' ),
 	'icon'=>'white ok',
 	'type'=>'info',
-	'label'=>'Valorar',
-	'htmlOptions'=>array( 'rel'=>'tooltip', 'title'=>'Crear nueva valoracion funcional' )
+	'label'=>'Evaluar',
+	'htmlOptions'=>array( 'rel'=>'tooltip', 'title'=>'Crear nueva evaluacion medica' )
 )); ?>
 
-
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
-	'id'=>'valoracion-funcional-grid',
-	'type'=>'stripped condensed',
+	'id'=>'evaluacion-medica-grid',
 	'dataProvider'=>$model->search(),
 	//'filter'=>$model,
 	'columns'=>array(
-		//'idHistoria_GYM',
-		'idValoracion_funcional',
-		'objetivo_ejercicio',
-		'observaciones',
-		array('name'=>'fecha_hora', 'type'=>'datetime' ),
-		'programa_entrenamiento',		
+		'idHistoria_GYM',
+		'idEvaluacion_medica',
+		'enfermedad_actual',
+		'fecha_hora',		
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
-			'template'=>'{update}{view}',
 		),
 	),
 )); ?>

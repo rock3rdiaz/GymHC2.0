@@ -151,4 +151,10 @@ class VUsuarios extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function getFullName(){
+
+		return $this->primer_nombre . ' ' . $this->segundo_nombre . ' ' . $this->primer_apellido
+						 . ' ' . $this->segundo_apellido;
+	}
 }

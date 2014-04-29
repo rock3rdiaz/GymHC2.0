@@ -1,34 +1,32 @@
 <?php
 
 /**
- * This is the model class for table "valoracion_funcional".
+ * This is the model class for table "evaluacion_medica".
  *
- * The followings are the available columns in table 'valoracion_funcional':
- * @property integer $idValoracion_funcional
- * @property string $objetivo_ejercicio
- * @property string $observaciones
+ * The followings are the available columns in table 'evaluacion_medica':
+ * @property integer $idEvaluacion_medica
+ * @property string $enfermedad_actual
  * @property string $fecha_hora
- * @property string $programa_entrenamiento
  * @property integer $idHistoria_GYM
  *
  * The followings are the available model relations:
- * @property AntecedentesUsuario[] $antecedentesUsuarios
- * @property TestFuncional[] $testFuncionals
- * @property Perimetro[] $perimetros
- * @property FrecuenciaEntrenamiento[] $frecuenciaEntrenamientos
- * @property MedidasAntropometricas[] $medidasAntropometricases
- * @property Pliegue[] $pliegues
+ * @property AntecedentesGinecobstetricos[] $antecedentesGinecobstetricoses
+ * @property AntecedentesPatologicos[] $antecedentesPatologicoses
+ * @property AntecedentesTraumaLesion[] $antecedentesTraumaLesions
  * @property HistoriaGym $idHistoriaGYM
- * @property PlanEntrenamiento[] $planEntrenamientos
+ * @property Examen[] $examens
+ * @property ExamenFisico[] $examenFisicos
+ * @property ImpresionDiagnostica[] $impresionDiagnosticas
+ * @property AntecedentesDeportivos[] $antecedentesDeportivoses
  */
-class ValoracionFuncional extends CActiveRecord
+class EvaluacionMedica extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'valoracion_funcional';
+		return 'evaluacion_medica';
 	}
 
 	/**
@@ -39,14 +37,12 @@ class ValoracionFuncional extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('objetivo_ejercicio, fecha_hora, programa_entrenamiento, idHistoria_GYM', 'required'),
+			array('enfermedad_actual, fecha_hora, idHistoria_GYM', 'required'),
 			array('idHistoria_GYM', 'numerical', 'integerOnly'=>true),
-			array('objetivo_ejercicio', 'length', 'max'=>45),
-			array('observaciones', 'length', 'max'=>3000),
-			array('programa_entrenamiento', 'length', 'max'=>50),
+			array('enfermedad_actual', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idValoracion_funcional, objetivo_ejercicio, observaciones, fecha_hora, programa_entrenamiento, idHistoria_GYM', 'safe', 'on'=>'search'),
+			array('idEvaluacion_medica, enfermedad_actual, fecha_hora, idHistoria_GYM', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,14 +54,14 @@ class ValoracionFuncional extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'antecedentesUsuarios' => array(self::HAS_MANY, 'AntecedentesUsuario', 'idValoracion_funcional'),
-			'testFuncionals' => array(self::HAS_MANY, 'TestFuncional', 'idValoracion_funcional'),
-			'perimetros' => array(self::HAS_MANY, 'Perimetro', 'idValoracion_funcional'),
-			'frecuenciaEntrenamientos' => array(self::HAS_MANY, 'FrecuenciaEntrenamiento', 'idValoracion_funcional'),
-			'medidasAntropometricases' => array(self::HAS_MANY, 'MedidasAntropometricas', 'idValoracion_funcional'),
-			'pliegues' => array(self::HAS_MANY, 'Pliegue', 'idValoracion_funcional'),
+			'antecedentesGinecobstetricoses' => array(self::HAS_MANY, 'AntecedentesGinecobstetricos', 'idEvaluacion_medica'),
+			'antecedentesPatologicoses' => array(self::HAS_MANY, 'AntecedentesPatologicos', 'idEvaluacion_medica'),
+			'antecedentesTraumaLesions' => array(self::HAS_MANY, 'AntecedentesTraumaLesion', 'idEvaluacion_medica'),
 			'idHistoriaGYM' => array(self::BELONGS_TO, 'HistoriaGym', 'idHistoria_GYM'),
-			'planEntrenamientos' => array(self::HAS_MANY, 'PlanEntrenamiento', 'idValoracion_funcional'),
+			'examens' => array(self::HAS_MANY, 'Examen', 'idEvaluacion_medica'),
+			'examenFisicos' => array(self::HAS_MANY, 'ExamenFisico', 'idEvaluacion_medica'),
+			'impresionDiagnosticas' => array(self::HAS_MANY, 'ImpresionDiagnostica', 'idEvaluacion_medica'),
+			'antecedentesDeportivoses' => array(self::HAS_MANY, 'AntecedentesDeportivos', 'idEvaluacion_medica'),
 		);
 	}
 
@@ -75,11 +71,9 @@ class ValoracionFuncional extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idValoracion_funcional' => 'Id',
-			'objetivo_ejercicio' => 'Objetivo Ejercicio',
-			'observaciones' => 'Observaciones',
+			'idEvaluacion_medica' => 'Id',
+			'enfermedad_actual' => 'Enfermedad Actual',
 			'fecha_hora' => 'Fecha Hora',
-			'programa_entrenamiento' => 'Programa Entrenamiento',
 			'idHistoria_GYM' => 'Codigo HC',
 		);
 	}
@@ -102,11 +96,9 @@ class ValoracionFuncional extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('idValoracion_funcional',$this->idValoracion_funcional);
-		$criteria->compare('objetivo_ejercicio',$this->objetivo_ejercicio,true);
-		$criteria->compare('observaciones',$this->observaciones,true);
+		$criteria->compare('idEvaluacion_medica',$this->idEvaluacion_medica);
+		$criteria->compare('enfermedad_actual',$this->enfermedad_actual,true);
 		$criteria->compare('fecha_hora',$this->fecha_hora,true);
-		$criteria->compare('programa_entrenamiento',$this->programa_entrenamiento,true);
 		$criteria->compare('idHistoria_GYM',$this->idHistoria_GYM);
 
 		return new CActiveDataProvider($this, array(
@@ -118,7 +110,7 @@ class ValoracionFuncional extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ValoracionFuncional the static model class
+	 * @return EvaluacionMedica the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

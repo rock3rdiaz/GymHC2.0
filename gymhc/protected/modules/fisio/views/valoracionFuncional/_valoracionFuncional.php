@@ -5,7 +5,7 @@
 					'mejoramiento fisico'=>'Mejoramiento fisico',
 					'mantenimiento fisico'=>'Mantenimiento fisico',
 				 ),
-			array( 'empty'=>'-- Todos los programas --', 'class'=>'span6','maxlength'=>50)); ?>
+			array( 'empty'=>'-- Seleccione una opcion --', 'class'=>'span6','maxlength'=>50)); ?>
 	</div>
 
 	<div class="span6">

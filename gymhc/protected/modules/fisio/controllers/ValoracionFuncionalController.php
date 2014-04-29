@@ -31,7 +31,7 @@ class ValoracionFuncionalController extends Controller
 				'users'=>array('admin'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update', 'xHRGetAppointmentDataById'),
 				'users'=>array( Yii::app()->getSession()->get('empleado')->login ),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -69,16 +69,7 @@ class ValoracionFuncionalController extends Controller
 		$test_funcional = new TestFuncional();
 		$frecuencia_entrenamiento = new FrecuenciaEntrenamiento();
 
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation( array(
-			'model'=>$model,
-			'antecedentes_usuario'=>$antecedentes_usuario,
-			'medidas_antropometricas'=>$medidas_antropometricas,
-			'perimetro'=>$perimetro,
-			'pliegue'=>$pliegue,
-			'test_funcional'=>$test_funcional,
-			'frecuencia_entrenamiento'=>$frecuencia_entrenamiento,
-		) );
+		$citas_programadas = parent::getAppoinmetsToday( 'funcional' );		
 
 		if( isset( $_POST['ValoracionFuncional'],
 					$_POST['AntecedentesUsuario'],
@@ -94,7 +85,7 @@ class ValoracionFuncionalController extends Controller
 
 				$model->attributes=$_POST['ValoracionFuncional'];
 				$model->fecha_hora = date('Y-m-d H:i:s');
-				$model->idHistoria_GYM = 81;//Dato de prueba
+				$model->idHistoria_GYM = $_POST['user_clinic_history'];
 
 				if( $model->validate() ){
 
@@ -132,6 +123,11 @@ class ValoracionFuncionalController extends Controller
 						$test_funcional->save( false );
 						$frecuencia_entrenamiento->save( false );
 
+						/*Modificamos el estado de la cita llevada a cabo*/
+						$cita_efectuada = Cita::model()->findByPk( $_POST['appoinments_today'] );
+						$cita_efectuada->estado = 'efectuada';
+						$cita_efectuada->update( array( 'estado' ) );
+
 						$transaction->commit();
 
 						Yii::app()->user->setFlash('success', '<strong>:)!</strong> Los datos se han almacenado correctamente.');
@@ -145,6 +141,18 @@ class ValoracionFuncionalController extends Controller
 			}catch(Exception $ex){
 
 				$transaction->rollback();
+				Yii::app()->user->setFlash('error', '<strong>:\'(!</strong> Ha ocurrido un error al intentar alamacenar los datos.');
+
+				$this->render('create',array(
+					'model'=>$model,
+					'antecedentes_usuario'=>$antecedentes_usuario,
+					'medidas_antropometricas'=>$medidas_antropometricas,
+					'perimetro'=>$perimetro,
+					'pliegue'=>$pliegue,
+					'test_funcional'=>$test_funcional,
+					'frecuencia_entrenamiento'=>$frecuencia_entrenamiento,
+					'citas_programadas'=>$citas_programadas,
+				));
 			}
 		}
 
@@ -156,6 +164,7 @@ class ValoracionFuncionalController extends Controller
 			'pliegue'=>$pliegue,
 			'test_funcional'=>$test_funcional,
 			'frecuencia_entrenamiento'=>$frecuencia_entrenamiento,
+			'citas_programadas'=>$citas_programadas,
 		));
 	}
 

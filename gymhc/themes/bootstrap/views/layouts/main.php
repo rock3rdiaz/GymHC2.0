@@ -7,6 +7,9 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
 
+    <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/vendors/js/angular.js" ></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/init.js" ></script>
+
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 	<?php Yii::app()->bootstrap->register(); ?>

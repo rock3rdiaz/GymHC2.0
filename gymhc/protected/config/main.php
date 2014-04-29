@@ -36,7 +36,9 @@ return array(
             'class'=>'system.gii.GiiModule',
             'password'=>'admin',
         ),
-        'fisio'//Modulo de la fisioterapueta
+        'fisio',//Modulo de la fisioterapueta
+        'secretaria',//Modulo de la secretaria
+        'medico',//Modulo de la secretaria
 	),
 
 	// application components
@@ -63,15 +65,8 @@ return array(
 		),
 		*/
 	
-		/*'db'=>array(
-			'connectionString' => 'sqlsrv:Server=192.168.4.245;Database=Gymhc',			
-			'username' => 'sa',
-			'password' => 'sistemas',
-			'charset' => 'utf8',
-		),*/
-
 		'db'=>array(
-			'connectionString' => 'sqlsrv:Server=192.168.0.171;Database=GymhcTest20',			
+			'connectionString' => 'sqlsrv:Server=192.168.4.245;Database=Gymhc_20',			
 			'username' => 'sa',
 			'password' => 'sistemas',
 			'charset' => 'utf8',
