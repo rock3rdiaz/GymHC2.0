@@ -3009,3 +3009,678 @@ Stack trace:
 #36 {main}
 REQUEST_URI=/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
 ---
+2014/04/30 10:31:37 [error] [exception.CException] exception 'CException' with message 'La propiedad "ExamenFisico"."concientse" no se encuentra definida.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(145): CComponent->__get('concientse')
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('concientse')
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ExamenFisico), 'concientse')
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ExamenFisico), 'concientse', Array, Array)
+#4 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\input\TbInputVertical.php(60): CActiveForm->dropDownList(Object(ExamenFisico), 'concientse', Array, Array)
+#5 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\input\TbInput.php(211): TbInputVertical->dropDownList()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(173): TbInput->run()
+#7 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\TbActiveForm.php(497): CBaseController->widget('bootstrap.widge...', Array)
+#8 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\TbActiveForm.php(112): TbActiveForm->inputRow('dropdownlist', Object(ExamenFisico), 'concientse', Array, Array)
+#9 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\views\evaluacionMedica\_examenFisico.php(11): TbActiveForm->dropDownListRow(Object(ExamenFisico), 'concientse', Array, Array)
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\views\evaluacionMedica\_form.php(76): CController->renderPartial('_examenFisico', Array, Object(EvaluacionMedicaController))
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#17 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\views\evaluacionMedica\create.php(28): CController->renderPartial('_form', Array)
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#20 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#21 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#22 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\controllers\EvaluacionMedicaController.php(188): CController->render('create', Array)
+#23 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EvaluacionMedicaController->actionCreate()
+#24 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#25 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#26 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#27 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#28 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#29 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#30 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#31 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#32 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#33 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('medico/evaluaci...')
+#34 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#35 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#36 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+---
+2014/04/30 10:46:13 [error] [exception.CException] exception 'CException' with message 'La propiedad "MedidasFisicas"."idEvaluacion_medica" no se encuentra definida.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(161): CComponent->__set('idEvaluacion_me...', '24')
+#1 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\controllers\EvaluacionMedicaController.php(112): CActiveRecord->__set('idEvaluacion_me...', '24')
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EvaluacionMedicaController->actionCreate()
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('medico/evaluaci...')
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+---
+2014/04/30 10:46:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "MedidasFisicas"."idEvaluacion_medica" no se encuentra definida.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(161): CComponent->__set('idEvaluacion_me...', '25')
+#1 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\controllers\EvaluacionMedicaController.php(112): CActiveRecord->__set('idEvaluacion_me...', '25')
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EvaluacionMedicaController->actionCreate()
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('medico/evaluaci...')
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+---
+2014/04/30 10:47:03 [error] [exception.CException] exception 'CException' with message 'La propiedad "MedidasFisicas"."idEvaluacion_medica" no se encuentra definida.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(161): CComponent->__set('idEvaluacion_me...', '26')
+#1 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\controllers\EvaluacionMedicaController.php(112): CActiveRecord->__set('idEvaluacion_me...', '26')
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EvaluacionMedicaController->actionCreate()
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('medico/evaluaci...')
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+---
+2014/04/30 10:47:29 [error] [exception.CException] exception 'CException' with message 'La propiedad "MedidasFisicas"."idEvaluacion_medica" no se encuentra definida.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(161): CComponent->__set('idEvaluacion_me...', '27')
+#1 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\controllers\EvaluacionMedicaController.php(112): CActiveRecord->__set('idEvaluacion_me...', '27')
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EvaluacionMedicaController->actionCreate()
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('medico/evaluaci...')
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+---
+2014/04/30 10:47:31 [error] [exception.CException] exception 'CException' with message 'La propiedad "MedidasFisicas"."idEvaluacion_medica" no se encuentra definida.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(161): CComponent->__set('idEvaluacion_me...', '28')
+#1 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\controllers\EvaluacionMedicaController.php(112): CActiveRecord->__set('idEvaluacion_me...', '28')
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EvaluacionMedicaController->actionCreate()
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('medico/evaluaci...')
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+---
+2014/05/05 08:46:11 [error] [exception.CException] exception 'CException' with message 'TbActiveForm y sus behaviors no tienen un método o closure llamado "hiddenText".' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\views\evaluacionMedica\_datosPaciente.php(113): CComponent->__call('hiddenText', Array)
+#1 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\views\evaluacionMedica\_datosPaciente.php(113): TbActiveForm->hiddenText()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\views\evaluacionMedica\_form.php(37): CController->renderPartial('_datosPaciente', Array, Object(EvaluacionMedicaController))
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\views\evaluacionMedica\create.php(37): CController->renderPartial('_form', Array)
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\controllers\EvaluacionMedicaController.php(191): CController->render('create', Array)
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EvaluacionMedicaController->actionCreate()
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('medico/evaluaci...')
+#26 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/admin
+---
+2014/05/05 14:02:19 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[42000]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Error converting data type nvarchar to numeric.. La sentencia SQL ejecutada fue: INSERT INTO [dbo].[medidas_fisicas] ([ta], [fc], [fr], [peso], [talla], [imc], [peso_ideal], [gasto_basal_energia]) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\medico\controllers\EvaluacionMedicaController.php (146)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 14:10:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('medico/evaluaci...')
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?ajax=evaluacion-medica-grid&id=64&r=medico%2FevaluacionMedica%2Fdelete
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=medico/evaluacionMedica/admin
+---
+2014/05/05 14:28:41 [error] [php] Object of class DefaultController could not be converted to string (C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\DefaultController.php:7)
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(286): DefaultController->runAction()
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): DefaultController->run()
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CWebApplication->run()
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/default/index
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\DefaultController.php (7)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 14:50:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/default/index
+---
+2014/05/05 15:24:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?ajax=cita-grid&id=1&r=secretaria%2Fcita%2Fdelete
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 15:57:52 [error] [php] Invalid argument supplied for foreach() (C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php:2078)
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CitaController->renderInternal()
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CitaController->renderFile()
+#2 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\views\cita\create.php(17): CitaController->renderPartial()
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require()
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CitaController->renderInternal()
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CitaController->renderFile()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(782): CitaController->renderPartial()
+#7 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(85): CitaController->render()
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CitaController->runAction()
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CitaController->filterAccessControl()
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CitaController->runActionWithFilters()
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CitaController->run()
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CWebApplication->run()
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\views\cita\_form.php (38)
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\views\cita\create.php (17)
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php (85)
+2014/05/05 16:06:34 [error] [exception.CException] exception 'CException' with message 'La propiedad "Cita"."Empleado_idEmpwleado" no se encuentra definida.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(145): CComponent->__get('Empleado_idEmpw...')
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('Empleado_idEmpw...')
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(Cita), 'Empleado_idEmpw...')
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(Cita), 'Empleado_idEmpw...', Array, Array)
+#4 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\input\TbInputVertical.php(60): CActiveForm->dropDownList(Object(Cita), 'Empleado_idEmpw...', Array, Array)
+#5 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\input\TbInput.php(211): TbInputVertical->dropDownList()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(173): TbInput->run()
+#7 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\TbActiveForm.php(497): CBaseController->widget('bootstrap.widge...', Array)
+#8 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\TbActiveForm.php(112): TbActiveForm->inputRow('dropdownlist', Object(Cita), 'Empleado_idEmpw...', Array, Array)
+#9 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\views\cita\_form.php(39): TbActiveForm->dropDownListRow(Object(Cita), 'Empleado_idEmpw...', Array, Array)
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\views\cita\create.php(17): CController->renderPartial('_form', Array)
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#18 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(89): CController->render('create', Array)
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#20 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#21 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#23 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#29 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#30 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:30:58 [error] [exception.CDbException] exception 'CDbException' with message 'Tabla "empleado" no contiene la columna con nombre "0".' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\schema\CDbCommandBuilder.php:694
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1535): CDbCommandBuilder->createColumnCriteria(Object(CMssqlTableSchema), Array, '', Array, '[t].')
+#1 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(77): CActiveRecord->findAllByAttributes(Array)
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:31:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Incorrect syntax near the keyword 'OR'.. La sentencia SQL ejecutada fue: SELECT * FROM [dbo].[empleado] [t] WHERE [t].[idCargo]=:yp0 AND (OR).
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php (77)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 16:31:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Incorrect syntax near the keyword 'OR'.. The SQL statement executed was: SELECT * FROM [dbo].[empleado] [t] WHERE [t].[idCargo]=:yp0 AND (OR)' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1536): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(77): CActiveRecord->findAllByAttributes(Array, 'OR')
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:32:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Incorrect syntax near the keyword 'IN'.. La sentencia SQL ejecutada fue: SELECT * FROM [dbo].[empleado] [t] WHERE [t].[idCargo]=:yp0 AND (IN).
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php (77)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 16:32:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Incorrect syntax near the keyword 'IN'.. The SQL statement executed was: SELECT * FROM [dbo].[empleado] [t] WHERE [t].[idCargo]=:yp0 AND (IN)' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1536): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(77): CActiveRecord->findAllByAttributes(Array, 'IN')
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:41:08 [error] [php] Object of class Cargo could not be converted to string (C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:275)
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\schema\CDbCommandBuilder.php(100): CMssqlCommandBuilder->bindValues()
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\schema\mssql\CMssqlCommandBuilder.php(48): CMssqlCommandBuilder->createFindCommand()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1350): CMssqlCommandBuilder->createFindCommand()
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1470): Empleado->query()
+#4 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(142): Empleado->findAll()
+#5 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(66): Empleado->getListEmployeesByCharge()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CitaController->runAction()
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CitaController->filterAccessControl()
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CitaController->runActionWithFilters()
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CitaController->run()
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CWebApplication->run()
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php (142)
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php (66)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 16:52:07 [error] [exception.CException] exception 'CException' with message 'CDbCriteria y sus behaviors no tienen un método o closure llamado "with".' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(134): CComponent->__call('with', Array)
+#1 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(134): CDbCriteria->with(Array)
+#2 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(66): Empleado->getListEmployeesByCharge(Array)
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:52:39 [error] [exception.CDbException] exception 'CDbException' with message 'La relación "idcargo0 " no se encuentra definida en la clase active record "Empleado".' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php:226
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(298): CActiveFinder->buildJoinTree(Object(CJoinElement), 'idcargo0 ', Array)
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct(Object(Empleado), Array)
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1355): CActiveRecord->getActiveFinder(Array)
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#5 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(136): CActiveRecord->findAll(Object(CDbCriteria))
+#6 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(66): Empleado->getListEmployeesByCharge(Array)
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:52:56 [error] [exception.CDbException] exception 'CDbException' with message 'La relación "idCargo0 " no se encuentra definida en la clase active record "Empleado".' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php:226
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(298): CActiveFinder->buildJoinTree(Object(CJoinElement), 'idCargo0 ', Array)
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct(Object(Empleado), Array)
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1355): CActiveRecord->getActiveFinder(Array)
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#5 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(136): CActiveRecord->findAll(Object(CDbCriteria))
+#6 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(66): Empleado->getListEmployeesByCharge(Array)
+#7 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:53:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: [Microsoft][SQL Server Native Client 11.0][SQL Server]An expression of non-boolean type specified in a context where a condition is expected, near ')'.. La sentencia SQL ejecutada fue: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (Array).
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php (136)
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php (66)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 16:53:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: [Microsoft][SQL Server Native Client 11.0][SQL Server]An expression of non-boolean type specified in a context where a condition is expected, near ')'.. The SQL statement executed was: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (Array)' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(803): CDbCommand->queryAll()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(437): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), true)
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(136): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(66): Empleado->getListEmployeesByCharge(Array)
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:54:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Invalid column name 'fisioterapeuta'.. La sentencia SQL ejecutada fue: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (nombre = "fisioterapeuta").
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php (136)
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php (66)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 16:54:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Invalid column name 'fisioterapeuta'.. The SQL statement executed was: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (nombre = "fisioterapeuta")' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(803): CDbCommand->queryAll()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(437): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), true)
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(136): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(66): Empleado->getListEmployeesByCharge(Array)
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:55:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Invalid column name 'fisioterapeuta'.. La sentencia SQL ejecutada fue: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (nombre="fisioterapeuta").
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php (136)
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php (66)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 16:55:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Invalid column name 'fisioterapeuta'.. The SQL statement executed was: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (nombre="fisioterapeuta")' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(803): CDbCommand->queryAll()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(437): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), true)
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(136): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(66): Empleado->getListEmployeesByCharge(Array)
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:58:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Invalid column name 'fisioterapeuta'.. La sentencia SQL ejecutada fue: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (nombre="fisioterapeuta").
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php (136)
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php (66)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 16:58:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Invalid column name 'fisioterapeuta'.. The SQL statement executed was: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (nombre="fisioterapeuta")' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(803): CDbCommand->queryAll()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(437): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), true)
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(136): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(66): Empleado->getListEmployeesByCharge(Array)
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 16:58:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Invalid column name 'fisioterapeuta'.. La sentencia SQL ejecutada fue: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (nombre=fisioterapeuta).
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php (136)
+in C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php (66)
+in C:\xampp\htdocs\GymHC2.0\gymhc\index.php (13)
+2014/05/05 16:58:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: [Microsoft][SQL Server Native Client 11.0][SQL Server]Invalid column name 'fisioterapeuta'.. The SQL statement executed was: SELECT [t].[idEmpleado] AS [t0_c0], [t].[nombres] AS [t0_c1], [t].[apellidos] AS [t0_c2], [t].[idCargo] AS [t0_c3], [t].[Profesion_idProfesion] AS [t0_c4], [t].[login] AS [t0_c5], [t].[pass] AS [t0_c6], [idCargo0].[idCargo] AS [t1_c0], [idCargo0].[nombre] AS [t1_c1] FROM [dbo].[empleado] [t]  LEFT OUTER JOIN [dbo].[cargo] [idCargo0] ON ([t].[idCargo]=[idCargo0].[idCargo])  WHERE (nombre=fisioterapeuta)' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(803): CDbCommand->queryAll()
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(437): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), true)
+#5 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\GymHC2.0\gymhc\protected\models\Empleado.php(136): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(66): Empleado->getListEmployeesByCharge(Array)
+#8 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#9 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---
+2014/05/05 17:13:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "Cita"."Empleado_idaEmpleado" no se encuentra definida.' in C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(145): CComponent->__get('Empleado_idaEmp...')
+#1 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('Empleado_idaEmp...')
+#2 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(Cita), 'Empleado_idaEmp...')
+#3 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(Cita), 'Empleado_idaEmp...', Array, Array)
+#4 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\input\TbInputVertical.php(60): CActiveForm->dropDownList(Object(Cita), 'Empleado_idaEmp...', Array, Array)
+#5 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\input\TbInput.php(211): TbInputVertical->dropDownList()
+#6 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(173): TbInput->run()
+#7 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\TbActiveForm.php(497): CBaseController->widget('bootstrap.widge...', Array)
+#8 C:\xampp\htdocs\GymHC2.0\gymhc\protected\extensions\bootstrap\widgets\TbActiveForm.php(112): TbActiveForm->inputRow('dropdownlist', Object(Cita), 'Empleado_idaEmp...', Array, Array)
+#9 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\views\cita\_form.php(39): TbActiveForm->dropDownListRow(Object(Cita), 'Empleado_idaEmp...', Array, Array)
+#10 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\views\cita\create.php(17): CController->renderPartial('_form', Array)
+#14 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#15 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#16 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#17 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#18 C:\xampp\htdocs\GymHC2.0\gymhc\protected\modules\secretaria\controllers\CitaController.php(85): CController->render('create', Array)
+#19 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): CitaController->actionCreate()
+#20 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#21 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#22 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#23 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#24 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#25 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#26 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('create')
+#29 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('secretaria/cita...')
+#30 C:\Users\rockerW7\Downloads\Frameworks\PHP\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\GymHC2.0\gymhc\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/GymHC2.0/gymhc/index.php?r=secretaria/cita/create
+HTTP_REFERER=http://localhost/GymHC2.0/gymhc/index.php?r=secretaria/cita/admin
+---

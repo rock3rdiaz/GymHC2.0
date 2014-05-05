@@ -80,11 +80,19 @@ class SiteController extends Controller
 
 						break;
 
-					//Medioo general
+					//Medioco general
 					case 'medico general':
 						
 						Yii::app()->getSession()->add('empleado', $empleado);					
 						$this->redirect(array('medico/default/index'));
+
+						break;
+
+					//Secretaria
+					case 'secretaria':
+						
+						Yii::app()->getSession()->add('empleado', $empleado);					
+						$this->redirect(array('secretaria/default/index'));
 
 						break;
 				}	

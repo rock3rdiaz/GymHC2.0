@@ -80,14 +80,14 @@ class EvaluacionMedicaController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if( isset( $_POST['EvaluacionMedica'],
+					$_POST['DatosExtraUsuario'],
 					$_POST['ExamenFisico'],
 					$_POST['ImpresionDiagnostica'],
 					$_POST['MedidasFisicas'],
 					$_POST['CaracteristicasFisicas'],
 					$_POST['AntecedentesDeportivos'],
 					$_POST['AntecedentesGinecobstetricos'],
-					$_POST['AntecedentesTraumaLesion'],
-					$_POST['DatosExtraUsuario'],
+					$_POST['AntecedentesTraumaLesion'],					
 					$_POST['AntecedentesPatologicos'] ) ) {
 
 			$transaction = Yii::app()->db->beginTransaction();
@@ -102,18 +102,6 @@ class EvaluacionMedicaController extends Controller
 
 					$model->save( false );
 
-					$examen_fisico->attributes = $_POST['ExamenFisico'];
-					$examen_fisico->idEvaluacion_medica = $model->getPrimarykey();
-
-					$impresion_diagnostica->attributes = $_POST['ImpresionDiagnostica'];
-					$impresion_diagnostica->idEvaluacion_medica = $model->getPrimarykey();
-
-					$medidas_fisicas->attributes = $_POST['MedidasFisicas'];
-					$medidas_fisicas->idEvaluacion_medica = $model->getPrimarykey();
-
-					$caracteristicas_fisicas->attributes = $_POST['CaracteristicasFisicas'];
-					$caracteristicas_fisicas->idEvaluacion_medica = $model->getPrimarykey();
-
 					$antecedentes_deportivos->attributes = $_POST['AntecedentesDeportivos'];
 					$antecedentes_deportivos->idEvaluacion_medica = $model->getPrimarykey();
 
@@ -123,23 +111,37 @@ class EvaluacionMedicaController extends Controller
 					$antecedentes_trauma_lesion->attributes = $_POST['AntecedentesTraumaLesion'];
 					$antecedentes_trauma_lesion->idEvaluacion_medica = $model->getPrimarykey();
 
-					$datos_extra_usuario->attributes = $_POST['DatosExtraUsuario'];
-					$datos_extra_usuario->idEvaluacion_medica = $model->getPrimarykey();
-
 					$antecedentes_patologicos->attributes = $_POST['AntecedentesPatologicos'];
 					$antecedentes_patologicos->idEvaluacion_medica = $model->getPrimarykey();
 
-					if( $examen_fisico->validate() &&
-						 $impresion_diagnostica->validate() &&
-						 $medidas_fisicas->validate() &&
-						 $caracteristicas_fisicas->validate() &&
+					$medidas_fisicas->attributes = $_POST['MedidasFisicas'];
+					$caracteristicas_fisicas->attributes = $_POST['CaracteristicasFisicas'];				
+
+					$impresion_diagnostica->attributes = $_POST['ImpresionDiagnostica'];
+					$impresion_diagnostica->idEvaluacion_medica = $model->getPrimarykey();
+
+					/**Si el usuario actual ya posee datos extra se cargan éstos, en caso contrario el registro
+					* sigue siendo nuevo.
+					*/
+					$_exist = DatosExtraUsuario::model()->findByPk( $_POST['user_data_extra_code'] );
+					if( $_exist ){
+						$datos_extra_usuario = $_exist;
+					}									
+
+					$datos_extra_usuario->attributes = $_POST['DatosExtraUsuario'];
+					$datos_extra_usuario->idVUsuario = $_POST['user_code'];
+					
+					$examen_fisico->attributes = $_POST['ExamenFisico'];					
+
+					if( $datos_extra_usuario->validate() &&
+						 $impresion_diagnostica->validate() &&						
 						 $antecedentes_deportivos->validate() &&
 						 $antecedentes_ginecobstetricos->validate() &&
-						 $antecedentes_trauma_lesion->validate() && 
-						 $datos_extra_usuario->validate() &&
-						 $antecedentes_patologicos->validate()){
-
-						$examen_fisico->save( false );
+						 $antecedentes_trauma_lesion->validate() && 						 
+						 $antecedentes_patologicos->validate() &&
+						 $medidas_fisicas->validate() &&
+						 $caracteristicas_fisicas->validate() ){
+						
 						$impresion_diagnostica->save( false );
 						$medidas_fisicas->save( false );
 						$caracteristicas_fisicas->save( false );
@@ -147,27 +149,36 @@ class EvaluacionMedicaController extends Controller
 						$antecedentes_ginecobstetricos->save( false );
 						$antecedentes_trauma_lesion->save( false );
 						$datos_extra_usuario->save( false );
-						$antecedentes_patologicos->save( false );
+						$antecedentes_patologicos->save( false );	
+						
+						$examen_fisico->idEvaluacion_medica = $model->getPrimarykey();
+						$examen_fisico->idMedidas_fisicas = $medidas_fisicas->getPrimaryKey();
+						$examen_fisico->idCaracteristicas_fisicas = $caracteristicas_fisicas->getPrimaryKey();
 
+						if( $examen_fisico->validate() ){
 
-						/*Modificamos el estado de la cita llevada a cabo*/
-						$cita_efectuada = Cita::model()->findByPk( $_POST['appoinments_today'] );
-						$cita_efectuada->estado = 'efectuada';
-						$cita_efectuada->update( array( 'estado' ) );
+							$examen_fisico->save( false );
 
-						$transaction->commit();
+							/*Modificamos el estado de la cita llevada a cabo*/
+							/*$cita_efectuada = Cita::model()->findByPk( $_POST['appoinments_today'] );
+							$cita_efectuada->estado = 'efectuada';
+							$cita_efectuada->update( array( 'estado' ) );*/
 
-						Yii::app()->user->setFlash('success', '<strong>:)!</strong> Los datos se han almacenado correctamente.');
-						$this->redirect(array('view','id'=>$model->idEvaluacion_medica));
+							$transaction->commit();
 
-					}else{
+							Yii::app()->user->setFlash('success', '<strong>:)!</strong> Los datos se han almacenado correctamente.');
+							$this->redirect(array('view','id'=>$model->idEvaluacion_medica));
 
-						$transaction->rollback();
+						}
 					}					
 				}
-			}catch( Exception $ex ){
+			}catch( CException $ex ){
 
 				$transaction->rollback();
+
+				Yii::app()->user->setFlash('error', '<strong>:\'(</strong> Ha ocurrido una excepcion!. ' . $ex->getMessage()
+						. ' Comuniquese con el area de sistemas adjuntando este mensaje.' );
+				$this->redirect( array( 'create' ) );
 			}
 		}
 

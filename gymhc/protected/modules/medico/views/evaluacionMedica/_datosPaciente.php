@@ -109,3 +109,6 @@
 						'ng-model'=>'user.companion_relationship' ) ); ?>
 	</div>
 </div>
+
+<?php echo CHtml::hiddenField( 'user_data_extra_code', '{{ user.extra_user_data_code }}',
+					array( 'ng-model'=>'user.extra_user_data_code' ) ); ?>

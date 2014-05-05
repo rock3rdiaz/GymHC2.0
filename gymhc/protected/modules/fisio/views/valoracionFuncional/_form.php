@@ -93,5 +93,5 @@
 
 
 <?php Yii::app()->getClientScript()
-			->registerScriptFile(Yii::app()->baseUrl . '/js/controllers/valoracionFuncionalController.js', CClientScript::POS_END)
+			->registerScriptFile(Yii::app()->baseUrl . '/js/app/controllers/valoracionFuncionalController.js', CClientScript::POS_END)
 ?>

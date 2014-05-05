@@ -69,8 +69,8 @@ class Empleado extends CActiveRecord
 			'idEmpleado' => 'Id Empleado',
 			'nombres' => 'Nombres',
 			'apellidos' => 'Apellidos',
-			'idCargo' => 'Id Cargo',
-			'Profesion_idProfesion' => 'Profesion Id Profesion',
+			'idCargo' => 'Cargo',
+			'Profesion_idProfesion' => 'Profesion',
 			'login' => 'Login',
 			'pass' => 'Pass',
 		);
@@ -125,5 +125,21 @@ class Empleado extends CActiveRecord
 	public function getFullName(){
 
 		return $this->nombres . ' ' . $this->apellidos;
+	}
+
+	/**
+	 * @summary: Metodo que retorna una lista de con los empleados que poseen rol de fisioterapeuta o
+	 * medico general. Utilizado por el controlador 'CitaController'. Su objetivo es listar solo aquellos
+	 * empleados que poseen el rol para evaluar funcional o medicamente a un usuario.
+	 *
+	 * @return [array] $list [Listado de empleados]
+	 */
+	public function getListMedicalEmployees(){
+
+		$criteria = new CDbCriteria();
+
+		$criteria->with = array( 'idCargo0'=>array( 'condition'=>"nombre='fisioterapeuta' OR nombre='medico general'" ) );
+
+		return $this->findAll( $criteria ); 
 	}
 }

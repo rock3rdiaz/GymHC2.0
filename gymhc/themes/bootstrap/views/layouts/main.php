@@ -6,9 +6,11 @@
 	<meta name="language" content="en" />
 
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/fullcalendar.css" />
 
-    <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/vendors/js/angular.js" ></script>
-    <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/init.js" ></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/vendors/angular.js" ></script>
+
+    <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/app/init.js" ></script>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 

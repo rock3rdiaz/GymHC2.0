@@ -83,6 +83,11 @@ class Controller extends CController
 		$datos_extra_usuario = DatosExtraUsuario::model()
 									->findByAttributes( array( 'idVUsuario'=>$cita->idVUsuario ) );
 
+		if( ! $datos_extra_usuario ){
+
+			$datos_extra_usuario = new DatosExtraUsuario();			
+		}
+
 		$data[ 'appointment' ] = $cita;
 		$data[ 'user' ] = $usuario;
 		$data[ 'clinic_history' ] = $historia_gym;

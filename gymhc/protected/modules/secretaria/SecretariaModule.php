@@ -16,11 +16,25 @@ class SecretariaModule extends CWebModule
 
 	public function beforeControllerAction($controller, $action)
 	{
+		$controller->menu_title = 'SECRETARIA';
+		$controller->brand_url_menu = '/secretaria/default/index';
+
 		if(parent::beforeControllerAction($controller, $action))
 		{
-			// this method is called before any module controller action is performed
-			// you may place customized code here
-			return true;
+			return $controller->menu_items = array(
+                array('label'=>'Actividades generales', 'url'=>'#', 'icon'=>'list',
+                	'items'=>array(
+                		array( 'label'=>'Citas de pacientes', 'icon'=>'white calendar',
+                			'url'=>array('/secretaria/cita/admin') ),
+                		)
+                ),
+                array('label'=>'Mi cuenta', 'url'=>'#', 'icon'=>'home',
+                	'items'=>array(
+                		array( 'label'=>'Mis datos', 'icon'=>'white check',
+                			'url'=>array( '#' ) )
+                	)
+                ),               
+            );
 		}
 		else
 			return false;

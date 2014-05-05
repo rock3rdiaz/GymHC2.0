@@ -10,6 +10,15 @@ $this->breadcrumbs=array(
 );*/
 ?>
 
+<?php $this->widget('bootstrap.widgets.TbAlert', array(
+        'block'=>true, // display a larger alert block?
+        'fade'=>true, // use transitions?
+        'closeText'=>'&times;', // close link text - if set to false, no close link is displayed
+        'alerts'=>array( // configurations per alert type
+            'error'=>array('block'=>true, 'fade'=>true, 'closeText'=>'&times;'), // success, info, warning, error or danger
+       	),
+)); ?>
+
 <h1 class='titles'>Nueva evaluaci&oacute;n m&eacute;dica</h1>
 
 <?php echo $this->renderPartial('_form', 

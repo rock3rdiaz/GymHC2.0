@@ -49,6 +49,7 @@ class Cita extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'usuario0' => array(self::BELONGS_TO, 'VUsuarios', 'idVUsuario'),
+			'empleado0' => array(self::BELONGS_TO, 'Empleado', 'Empleado_idEmpleado'),
 		);
 	}
 
@@ -62,7 +63,7 @@ class Cita extends CActiveRecord
 			'tipo' => 'Tipo',
 			'fecha' => 'Fecha',
 			'motivo' => 'Motivo',
-			'Empleado_idEmpleado' => 'Empleado Id Empleado',
+			'Empleado_idEmpleado' => 'Empleado asignado',
 			'estado' => 'Estado',
 			'idVUsuario' => 'Id Vusuario',
 		);

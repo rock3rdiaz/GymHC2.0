@@ -132,27 +132,15 @@ class ValoracionFuncionalController extends Controller
 
 						Yii::app()->user->setFlash('success', '<strong>:)!</strong> Los datos se han almacenado correctamente.');
 						$this->redirect(array('view','id'=>$model->idValoracion_funcional));
-					}else{
-
-						$transaction->rollback();
 					}
 				}
 
 			}catch(Exception $ex){
 
 				$transaction->rollback();
-				Yii::app()->user->setFlash('error', '<strong>:\'(!</strong> Ha ocurrido un error al intentar alamacenar los datos.');
-
-				$this->render('create',array(
-					'model'=>$model,
-					'antecedentes_usuario'=>$antecedentes_usuario,
-					'medidas_antropometricas'=>$medidas_antropometricas,
-					'perimetro'=>$perimetro,
-					'pliegue'=>$pliegue,
-					'test_funcional'=>$test_funcional,
-					'frecuencia_entrenamiento'=>$frecuencia_entrenamiento,
-					'citas_programadas'=>$citas_programadas,
-				));
+				Yii::app()->user->setFlash('error', '<strong>:\'(</strong> Ha ocurrido una excepcion!. ' . $ex->getMessage()
+						. ' Comuniquese con el area de sistemas adjuntando este mensaje.' );
+				$this->redirect( array( 'create' ) );
 			}
 		}
 

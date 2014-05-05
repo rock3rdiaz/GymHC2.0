@@ -30,7 +30,7 @@ $this->breadcrumbs=array(
 	'attributes'=>array(
 		'idEvaluacion_medica',
 		'enfermedad_actual',
-		'fecha_hora',
+		array( 'name'=>'fecha_hora', 'type'=>'datetime' ),
 		'idHistoria_GYM',
 	),
 )); ?>

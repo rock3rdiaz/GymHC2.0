@@ -2,7 +2,7 @@
 
 	<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 		'id'=>'evaluacion-medica-form',
-		'enableAjaxValidation'=>false,
+		'enableAjaxValidation'=>true,
 		'htmlOptions'=>array( 'ng-controller'=>'evaluacionMedicaController' )
 	)); ?>
 
@@ -81,6 +81,12 @@
 				        		array( 'antecedentes_patologicos'=>$antecedentes_patologicos,				        							        				
 				        			 	'form'=>$form ), $this  )			        	
 				        ),
+
+				        array('label'=>'Antecedentes ginecobstetricos',
+				        	'content'=>$this->renderPartial(  '_antecedentesGinecobstetricos', 
+				        		array( 'antecedentes_ginecobstetricos'=>$antecedentes_ginecobstetricos,				        							        				
+				        			 	'form'=>$form ), $this  )			        	
+				        ),
 				    ),
 			)); ?>
 
@@ -101,5 +107,5 @@
 </div>
 
 <?php Yii::app()->getClientScript()
-			->registerScriptFile(Yii::app()->baseUrl . '/js/controllers/evaluacionMedicaController.js', CClientScript::POS_END)
+			->registerScriptFile(Yii::app()->baseUrl . '/js/app/controllers/evaluacionMedicaController.js', CClientScript::POS_END)
 ?>

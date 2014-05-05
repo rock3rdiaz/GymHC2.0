@@ -49,7 +49,7 @@ $('.search-form form').submit(function(){
 		'idHistoria_GYM',
 		'idEvaluacion_medica',
 		'enfermedad_actual',
-		'fecha_hora',		
+		'fecha_hora:datetime:Fecha Hora',		
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
