@@ -49,6 +49,7 @@ class HistoriaGym extends CActiveRecord
 		return array(
 			'evaluacionMedicas' => array(self::HAS_MANY, 'EvaluacionMedica', 'idHistoria_GYM'),
 			'valoracionFuncionals' => array(self::HAS_MANY, 'ValoracionFuncional', 'idHistoria_GYM'),
+			'idusuario0' => array(self::BELONGS_TO, 'VUsuarios', 'idVUsuario'),
 		);
 	}
 

@@ -27,7 +27,7 @@ class CitaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'xHRGetUserByIdentification'),
 				'users'=>array( Yii::app()->getSession()->get('empleado')->login ),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -64,6 +64,7 @@ class CitaController extends Controller
 		$model = new Cita();
 		$listado_empleados_habiles = Empleado::model()
 									->getListMedicalEmployees();
+		$usuario = new VUsuarios();
 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
@@ -72,15 +73,17 @@ class CitaController extends Controller
 		{
 			$model->attributes=$_POST['Cita'];
 			$model->estado = 'pendiente';
-			$model->fecha = date('Y-m-d H:i:s');
 			
 			if( $model->save() ){
+
+				Yii::app()->user->setFlash('success', '<strong>:)!</strong> Cita asignada correctamente.');
 				$this->redirect(array('view','id'=>$model->idCita));
 			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+			'usuario'=>$usuario,
 			'listado_empleados_habiles'=>$listado_empleados_habiles,
 		));
 	}
@@ -93,19 +96,28 @@ class CitaController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$listado_empleados_habiles = Empleado::model()
+									->getListMedicalEmployees();
+		$usuario = VUsuarios::model()->findByPk( $model->idVUsuario );
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Cita']))
 		{
 			$model->attributes=$_POST['Cita'];
-			if($model->save())
+			
+			if($model->save()){
+
+				Yii::app()->user->setFlash('success', '<strong>:)!</strong> Cita actualizada correctamente.');
 				$this->redirect(array('view','id'=>$model->idCita));
+			}
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'usuario'=>$usuario,
+			'listado_empleados_habiles'=>$listado_empleados_habiles,
 		));
 	}
 
@@ -167,6 +179,7 @@ class CitaController extends Controller
 		$model->estado = 'cancelada';
 		$model->update( array( 'estado' ) );
 
+		Yii::app()->user->setFlash('success', '<strong>:)!</strong> Cita cancelada correctamente.');
 		$this->redirect( array( 'admin' ) );
 	}
 
@@ -194,5 +207,18 @@ class CitaController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	/**
+	 * @summary: Metodo ajax que retorna via json un objeto 'VUsuarios' dada la identificacion del mismo
+	 * @return [json] $data [VUsuario]
+	 */
+	public function actionXHRGetUserByIdentification(){
+
+		$identification = CJSON::decode( $_GET['identification'] );
+
+		$user = VUsuarios::model()->findByAttributes( array( 'identificacion'=>"{$identification}" ) );
+
+		echo CJSON::encode( $user );
 	}
 }

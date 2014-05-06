@@ -14,4 +14,5 @@ $this->breadcrumbs=array(
 
 <?php echo $this->renderPartial('_form', 
 		array( 'model'=>$model,
+				'usuario'=>$usuario,
 				'listado_empleados_habiles'=>$listado_empleados_habiles, ) ); ?>

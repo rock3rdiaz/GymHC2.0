@@ -28,12 +28,23 @@ class SecretariaModule extends CWebModule
                 			'url'=>array('/secretaria/cita/admin') ),
                 		)
                 ),
+
+                array('label'=>'Reportes', 'url'=>'#', 'icon'=>'file',
+                	'items'=>array(
+                		array( 'label'=>'Valoraciones funcionales', 'icon'=>'white hand-right',
+                			'url'=>array('/secretaria/report/valoracionFuncional') ),
+                		
+                		array( 'label'=>'Evaluaciones medicas', 'icon'=>'white hand-left',
+                			'url'=>array('/secretaria/report/evaluacionMedica') ),
+                		)
+                ),
+
                 array('label'=>'Mi cuenta', 'url'=>'#', 'icon'=>'home',
                 	'items'=>array(
                 		array( 'label'=>'Mis datos', 'icon'=>'white check',
                 			'url'=>array( '#' ) )
                 	)
-                ),               
+                )               
             );
 		}
 		else

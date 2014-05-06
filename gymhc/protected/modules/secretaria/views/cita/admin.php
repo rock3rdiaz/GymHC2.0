@@ -23,6 +23,15 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
+<?php $this->widget('bootstrap.widgets.TbAlert', array(
+        'block'=>true, // display a larger alert block?
+        'fade'=>true, // use transitions?
+        'closeText'=>'&times;', // close link text - if set to false, no close link is displayed
+        'alerts'=>array( // configurations per alert type
+            'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'&times;'), // success, info, warning, error or danger
+       	),
+)); ?>
+
 <h1 class = 'titles'>Administrar citas de pacientes</h1>
 
 <?php echo CHtml::link('Controles de busqueda','#',array('class'=>'search-button btn')); ?>
@@ -47,15 +56,14 @@ $('.search-form form').submit(function(){
 	//'filter'=>$model,
 	'columns'=>array(
 		'idCita',
+		array('name'=>'idVUsuario',
+			'value'=>'$data->usuario0->getFullName()' ),
 		'tipo',
 		'fecha:datetime:Fecha',
 		'motivo',
 		array( 'name'=>'Empleado_idEmpleado',
 			'value'=>'$data->empleado0->getFullName()' ),
-		'estado',
-		/*
-		'idVUsuario',
-		*/
+		'estado',				
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 			'template'=>'{update}{cancell}',

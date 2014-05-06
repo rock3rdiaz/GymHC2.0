@@ -1,18 +1,21 @@
 <?php
 $this->breadcrumbs=array(
-	'Citas'=>array('index'),
+	'Citas de pacientes'=>array('admin'),
 	$model->idCita=>array('view','id'=>$model->idCita),
-	'Update',
+	'Actualizar',
 );
 
-$this->menu=array(
+/*$this->menu=array(
 	array('label'=>'List Cita','url'=>array('index')),
 	array('label'=>'Create Cita','url'=>array('create')),
 	array('label'=>'View Cita','url'=>array('view','id'=>$model->idCita)),
 	array('label'=>'Manage Cita','url'=>array('admin')),
-);
+);*/
 ?>
 
-<h1>Update Cita <?php echo $model->idCita; ?></h1>
+<h1 class='titles'>Actualizar cita asignada No. <?php echo $model->idCita; ?></h1>
 
-<?php echo $this->renderPartial('_form',array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', 
+		array( 'model'=>$model,
+				'usuario'=>$usuario,
+				'listado_empleados_habiles'=>$listado_empleados_habiles, ) ); ?>

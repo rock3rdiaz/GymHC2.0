@@ -11,6 +11,10 @@
  * @property integer $Empleado_idEmpleado
  * @property string $estado
  * @property integer $idVUsuario
+ *
+ * The followings are the available model relations:
+ * @property Empleado $empleado0
+ * @property VUsuario $usuario0
  */
 class Cita extends CActiveRecord
 {
@@ -30,8 +34,8 @@ class Cita extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('idCita, tipo, fecha, motivo, Empleado_idEmpleado, estado, idVUsuario', 'required'),
-			array('idCita, Empleado_idEmpleado, idVUsuario', 'numerical', 'integerOnly'=>true),
+			array('tipo, fecha, motivo, Empleado_idEmpleado, estado, idVUsuario', 'required'),
+			array('Empleado_idEmpleado, idVUsuario', 'numerical', 'integerOnly'=>true),
 			array('tipo, motivo', 'length', 'max'=>20),
 			array('estado', 'length', 'max'=>15),
 			// The following rule is used by search().
@@ -104,13 +108,12 @@ class Cita extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Cita the static model class
+	 * @return _Cita the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-
 
 	/**
 	 * @summary: Metodo que retorna un array con las citas pendientes para el dia actual

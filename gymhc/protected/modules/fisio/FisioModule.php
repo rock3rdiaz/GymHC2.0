@@ -25,9 +25,7 @@ class FisioModule extends CWebModule
                 array('label'=>'Trabajo con pacientes', 'url'=>'#', 'icon'=>'user',
                 	'items'=>array(
                 		array( 'label'=>'Valoraciones funcionales', 'icon'=>'white heart',
-                			'url'=>array('/fisio/valoracionFuncional/admin') ),
-                		array( 'label'=>'Programas de entrenamiento', 'icon'=>'white signal', 
-                			'url'=>array('#') ) 
+                			'url'=>array('/fisio/valoracionFuncional/admin') ),                		
                 		)
                 ),
                 array('label'=>'Mi cuenta', 'url'=>'#', 'icon'=>'home',

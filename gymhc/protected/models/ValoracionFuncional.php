@@ -75,7 +75,7 @@ class ValoracionFuncional extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idValoracion_funcional' => 'Id',
+			'idValoracion_funcional' => 'Codigo VF',
 			'objetivo_ejercicio' => 'Objetivo Ejercicio',
 			'observaciones' => 'Observaciones',
 			'fecha_hora' => 'Fecha Hora',

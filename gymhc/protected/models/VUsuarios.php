@@ -98,6 +98,15 @@ class VUsuarios extends CActiveRecord
 	}
 
 	/**
+	 * @summary: Metodo sobreescrito. Util cuando se trabaja con modelos mapeados de vistas.
+	 * Este metodo permite definir el atributo de la vista que sera utilizado como PK
+	 * @return [type] [description]
+	 */
+	public function primaryKey(){
+		return 'id_usuarios';
+	}
+
+	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
 	 * Typical usecase:

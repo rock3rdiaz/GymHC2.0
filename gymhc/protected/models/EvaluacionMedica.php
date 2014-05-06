@@ -54,14 +54,15 @@ class EvaluacionMedica extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'antecedentesDeportivoses' => array(self::HAS_MANY, 'AntecedentesDeportivos', 'idEvaluacion_medica'),
+			'antecedentesFamiliares' => array(self::HAS_MANY, 'AntecedentesFamiliares', 'idEvaluacion_medica'),
 			'antecedentesGinecobstetricoses' => array(self::HAS_MANY, 'AntecedentesGinecobstetricos', 'idEvaluacion_medica'),
-			'antecedentesPatologicoses' => array(self::HAS_MANY, 'AntecedentesPatologicos', 'idEvaluacion_medica'),
+			'antecedentesPersonales' => array(self::HAS_MANY, 'AntecedentesPersonales', 'idEvaluacion_medica'),
 			'antecedentesTraumaLesions' => array(self::HAS_MANY, 'AntecedentesTraumaLesion', 'idEvaluacion_medica'),
-			'idHistoriaGYM' => array(self::BELONGS_TO, 'HistoriaGym', 'idHistoria_GYM'),
-			'examens' => array(self::HAS_MANY, 'Examen', 'idEvaluacion_medica'),
+			'idHistoriaGYM' => array(self::BELONGS_TO, 'HistoriaGYM', 'idHistoria_GYM'),
 			'examenFisicos' => array(self::HAS_MANY, 'ExamenFisico', 'idEvaluacion_medica'),
 			'impresionDiagnosticas' => array(self::HAS_MANY, 'ImpresionDiagnostica', 'idEvaluacion_medica'),
-			'antecedentesDeportivoses' => array(self::HAS_MANY, 'AntecedentesDeportivos', 'idEvaluacion_medica'),
+			'antecedentesPatologicos' => array(self::HAS_MANY, 'AntecedentesPatologicos', 'idEvaluacion_medica'),
 		);
 	}
 
@@ -71,7 +72,7 @@ class EvaluacionMedica extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idEvaluacion_medica' => 'Id',
+			'idEvaluacion_medica' => 'Codigo EM',
 			'enfermedad_actual' => 'Enfermedad Actual',
 			'fecha_hora' => 'Fecha Hora',
 			'idHistoria_GYM' => 'Codigo HC',
