@@ -24,14 +24,44 @@ $this->breadcrumbs=array(
 
 <h1 class="titles">Detalles de la valoracion funcional No. <?php echo $model->idValoracion_funcional; ?></h1>
 
-<?php $this->widget('bootstrap.widgets.TbDetailView',array(
-	'data'=>$model,
-	'attributes'=>array(
-		'idValoracion_funcional',
-		'objetivo_ejercicio',
-		'observaciones',
-		'fecha_hora',
-		'programa_entrenamiento',
-		'idHistoria_GYM',
-	),
+<?php $this->widget('bootstrap.widgets.TbTabs', array(
+				    'type'=>'tabs', // 'tabs' or 'pills'
+				    'tabs'=>array(
+				        array('label'=>'Datos generales', 'active'=>true,
+				        	'content'=>$this->renderPartial(  '_viewValoracionFuncional', 
+				        		array( 'model'=>$model ), $this  )			        	
+				        ),
+
+				        array('label'=>'Antecedentes', 
+				        	'content'=>$this->renderPartial(  '_viewAntecedentesUsuario', 
+				        		array( 'model'=>$model->antecedentesUsuarios[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Medidas antropometricas', 
+				        	'content'=>$this->renderPartial(  '_viewMedidasAntropometricas', 
+				        		array( 'model'=>$model->medidasAntropometricases[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Pliegues', 
+				        	'content'=>$this->renderPartial(  '_viewPliegues', 
+				        		array( 'model'=>$model->pliegues[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Perimetros', 
+				        	'content'=>$this->renderPartial(  '_viewPerimetros', 
+				        		array( 'model'=>$model->perimetros[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Test funcional', 
+				        	'content'=>$this->renderPartial(  '_viewTestFuncionales', 
+				        		array( 'model'=>$model->testFuncionals[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Frecuencia entrenamiento', 
+				        	'content'=>$this->renderPartial(  '_viewFrecuenciaEntrenamiento', 
+				        		array( 'model'=>$model->frecuenciaEntrenamientos[0] ), $this  ) 
+				        ),
+				    ),
 )); ?>
+
+

@@ -25,12 +25,42 @@ $this->breadcrumbs=array(
 
 <h1 class="titles">Detalles de la evaluaci&oacute;n m&eacute;dica No. <?php echo $model->idEvaluacion_medica; ?></h1>
 
-<?php $this->widget('bootstrap.widgets.TbDetailView',array(
-	'data'=>$model,
-	'attributes'=>array(
-		'idEvaluacion_medica',
-		'enfermedad_actual',
-		array( 'name'=>'fecha_hora', 'type'=>'datetime' ),
-		'idHistoria_GYM',
-	),
+<?php $this->widget('bootstrap.widgets.TbTabs', array(
+				    'type'=>'tabs', // 'tabs' or 'pills'
+				    'tabs'=>array(
+				        array('label'=>'Datos generales', 'active'=>true,
+				        	'content'=>$this->renderPartial(  '_viewEvaluacionMedica', 
+				        		array( 'model'=>$model ), $this  )			        	
+				        ),
+
+				        array('label'=>'Antecedentes deportivos', 
+				        	'content'=>$this->renderPartial(  '_viewAntecedentesDeportivos', 
+				        		array( 'model'=>$model->antecedentesDeportivoses[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Antecedentes de trauma y lesiones', 
+				        	'content'=>$this->renderPartial(  '_viewAntecedentesTraumaLesion', 
+				        		array( 'model'=>$model->antecedentesTraumaLesions[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Impresion diagnostica', 
+				        	'content'=>$this->renderPartial(  '_viewImpresionDiagnostica', 
+				        		array( 'model'=>$model->impresionDiagnosticas[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Examen fisico', 
+				        	'content'=>$this->renderPartial(  '_viewExamenFisico', 
+				        		array( 'model'=>$model->examenFisicos[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Antecedentes patologicos', 
+				        	'content'=>$this->renderPartial(  '_viewAntecedentesPatologicos', 
+				        		array( 'model'=>$model->antecedentesPatologicos[0] ), $this  ) 
+				        ),
+
+				        array('label'=>'Antecedentes ginecobstetricos', 
+				        	'content'=>$this->renderPartial(  '_viewAntecedentesGinecobstetricos', 
+				        		array( 'model'=>$model->antecedentesGinecobstetricoses[0] ), $this  ) 
+				        ),
+				    ),
 )); ?>

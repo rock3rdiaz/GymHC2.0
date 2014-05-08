@@ -24,18 +24,14 @@ class MedicoModule extends CWebModule
 			return $controller->menu_items = array(
                 array('label'=>'Trabajo con pacientes', 'url'=>'#', 'icon'=>'user',
                 	'items'=>array(
+                		array( 'label'=>'Deportes', 'icon'=>'white flag', 
+                			'url'=>array('/medico/deporte/admin') ),                		
                 		array( 'label'=>'Evaluaciones medicas', 'icon'=>'white heart',
                 			'url'=>array('/medico/evaluacionMedica/admin') ),
-                		array( 'label'=>'Examenes', 'icon'=>'white plus-sign', 
-                			'url'=>array('#') ) 
+                		array( 'label'=>'Examenes', 'icon'=>'white briefcase', 
+                			'url'=>array('/medico/examen/admin') ) 
                 		)
-                ),
-                array('label'=>'Mi cuenta', 'url'=>'#', 'icon'=>'home',
-                	'items'=>array(
-                		array( 'label'=>'Mis datos', 'icon'=>'white check',
-                			'url'=>array( '#' ) )
-                	)
-                ),               
+                ),            
             );
 		}
 		else

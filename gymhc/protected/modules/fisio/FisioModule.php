@@ -19,7 +19,7 @@ class FisioModule extends CWebModule
 		$controller->menu_title = 'FISIOTERAPEUTA';
 		$controller->brand_url_menu = '/fisio/default/index';
 
-		if(parent::beforeControllerAction($controller, $action))
+		if(parent::beforeControllerAction($controller, $action)
 		{
 			return $controller->menu_items = array(
                 array('label'=>'Trabajo con pacientes', 'url'=>'#', 'icon'=>'user',
@@ -27,13 +27,7 @@ class FisioModule extends CWebModule
                 		array( 'label'=>'Valoraciones funcionales', 'icon'=>'white heart',
                 			'url'=>array('/fisio/valoracionFuncional/admin') ),                		
                 		)
-                ),
-                array('label'=>'Mi cuenta', 'url'=>'#', 'icon'=>'home',
-                	'items'=>array(
-                		array( 'label'=>'Mis datos', 'icon'=>'white check',
-                			'url'=>array( '#' ) )
-                	)
-                ),               
+                ),  
             );
 		}
 		else

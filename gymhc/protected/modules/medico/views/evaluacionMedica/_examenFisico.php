@@ -93,7 +93,9 @@
 <div class="row">
 	<div class="span3">
 		<?php echo $form->textFieldRow( $medidas_fisicas, 'ta',
-					array('class'=>'span3', 'maxlength'=>8  ) ); ?>
+					array('class'=>'span3', 'maxlength'=>8,
+						'ng-model'=>'physical_examination.ta',
+						'ng-blur'=>'setImc()'  ) ); ?>
 	</div>
 
 	<div class="span3">
@@ -108,19 +110,22 @@
 
 	<div class="span3">
 		<?php echo $form->textFieldRow( $medidas_fisicas, 'peso',
-					array('class'=>'span3', 'maxlength'=>8  ) ); ?>
+					array('class'=>'span3', 'maxlength'=>8 ,
+						'ng-model'=>'physical_examination.weight',
+						'ng-blur'=>'setImc()' ) ); ?>
 	</div>
 </div>
 
 <div class="row">
 	<div class="span3">
 		<?php echo $form->textFieldRow( $medidas_fisicas, 'talla',
-					array('class'=>'span3', 'maxlength'=>8  ) ); ?>
+					array('class'=>'span3', 'maxlength'=>8 ) ); ?>
 	</div>
 
 	<div class="span3">
 		<?php echo $form->textFieldRow( $medidas_fisicas, 'imc',
-					array('class'=>'span3', 'maxlength'=>8  ) ); ?>
+					array('class'=>'span3', 'maxlength'=>8,
+						'ng-model'=>'physical_examination.imc') ); ?>
 	</div>
 
 	<div class="span3">

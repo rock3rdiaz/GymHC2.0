@@ -49,15 +49,17 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	//'filter'=>$model,
 	'columns'=>array(
-		//'idHistoria_GYM',
+		'idHistoria_GYM',
 		'idValoracion_funcional',
+		array( 'header'=>'Paciente', 
+			'value'=>'$data->idHistoriaGYM->idusuario0->getFullName()' ),
 		'objetivo_ejercicio',
-		'observaciones',
+		//'observaciones',
 		array('name'=>'fecha_hora', 'type'=>'datetime' ),
 		'programa_entrenamiento',		
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
-			'template'=>'{update}{view}',
+			'template'=>'{view}',
 		),
 	),
 )); ?>

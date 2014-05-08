@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Mis evaluaciones medicas'=>array('admin'),
-	'Adminstrar',
+	'Administrar examanes'=>array('admin'),
+	'Administrar',
 );
 
 /*$this->menu=array(
-	array('label'=>'List EvaluacionMedica','url'=>array('index')),
-	array('label'=>'Create EvaluacionMedica','url'=>array('create')),
+	array('label'=>'List Examen','url'=>array('index')),
+	array('label'=>'Create Examen','url'=>array('create')),
 );*/
 
 Yii::app()->clientScript->registerScript('search', "
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('evaluacion-medica-grid', {
+	$.fn.yiiGridView.update('examen-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1 class='titles'>Mis evaluaciones m&eacute;dicas</h1>
+<h1 class="titles">Adminsitrar Ex&aacute;manes</h1>
 
 <?php echo CHtml::link('Controles de busqueda','#',array('class'=>'search-button btn')); ?>
 <div class="search-form" style="display:none">
@@ -34,27 +34,26 @@ $('.search-form form').submit(function(){
 
 <?php $this->widget('bootstrap.widgets.TbButton', array(
 	'buttonType'=>'buttonLink',
-	'url'=>array( '/medico/evaluacionMedica/create' ),
+	'url'=>array( '/medico/examen/create' ),
 	'icon'=>'white ok',
 	'type'=>'info',
-	'label'=>'Evaluar',
-	'htmlOptions'=>array( 'rel'=>'tooltip', 'title'=>'Crear nueva evaluacion medica' )
+	'label'=>'Adicionar',
+	'htmlOptions'=>array( 'rel'=>'tooltip', 'title'=>'Solicitar examen' )
 )); ?>
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
-	'id'=>'evaluacion-medica-grid',
+	'id'=>'examen-grid',
 	'dataProvider'=>$model->search(),
 	//'filter'=>$model,
 	'columns'=>array(
-		'idHistoria_GYM',
+		'idExamen',
+		'descripcion',
+		'resultado',
+		'fecha_realizacion',
 		'idEvaluacion_medica',
-		array( 'header'=>'Paciente', 
-			'value'=>'$data->idHistoriaGYM->idusuario0->getFullName()' ),
-		'enfermedad_actual',
-		'fecha_hora:datetime:Fecha Hora',		
+		'fecha_expedicion',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
-			'template'=>'{view}'
 		),
 	),
 )); ?>

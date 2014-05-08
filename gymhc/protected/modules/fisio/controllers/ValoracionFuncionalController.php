@@ -31,7 +31,7 @@ class ValoracionFuncionalController extends Controller
 				'users'=>array('admin'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'xHRGetAppointmentDataById'),
+				'actions'=>array('create','xHRGetAppointmentDataById'),
 				'users'=>array( Yii::app()->getSession()->get('empleado')->login ),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions

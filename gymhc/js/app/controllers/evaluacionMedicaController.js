@@ -1,9 +1,32 @@
 gymhc.controller('evaluacionMedicaController', ['$scope', '$http', 'Util', function( $scope, $http, util ) {
 
+    //Modelo que representa los datos de la cita
 	$scope.appointment = {};
+
+    //Modelo que representa los datos del usuario
 	$scope.user = { kind_contribution: 'beneficiario', eps_code: 1 };
+
+    //Modelo que representa los datos de la HC
     $scope.sports_history = { yes_no: 'si' };
+
     $scope.reporoductive_background = { yes_no: 'si' };
+
+    //Modelo que representa los datos del examen fisico.
+    $scope.physical_examination = { 
+        imc: $( '#MedidasFisicas_imc' ).val(),
+        ta: $( '#MedidasFisicas_ta' ).val(),
+        weight: $( '#MedidasFisicas_peso' ).val(),
+    }
+
+    /**
+     * @summary: Metodo que calcula el IMC segun la formula imc = peso(kg)/estatura(m)^2
+     * 
+     * @return {[type]} [description]
+     */
+    $scope.setImc = function(){        
+        $scope.physical_examination.imc = ( ( $scope.physical_examination.weight ) / 
+                                            ( Math.pow( ( $scope.physical_examination.ta / 100 ), 2 ) ) ).toFixed( 2 );
+    }; 
 
     /*Funcion que habilita los componentes que se capturaran en el back. Utiliza un medotodo del servicio*/
     $scope.enabledData = function(){       

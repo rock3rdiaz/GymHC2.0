@@ -37,14 +37,7 @@ class SecretariaModule extends CWebModule
                 		array( 'label'=>'Evaluaciones medicas', 'icon'=>'white hand-left',
                 			'url'=>array('/secretaria/report/evaluacionMedica') ),
                 		)
-                ),
-
-                array('label'=>'Mi cuenta', 'url'=>'#', 'icon'=>'home',
-                	'items'=>array(
-                		array( 'label'=>'Mis datos', 'icon'=>'white check',
-                			'url'=>array( '#' ) )
-                	)
-                )               
+                ),             
             );
 		}
 		else

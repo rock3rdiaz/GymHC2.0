@@ -66,7 +66,7 @@ return array(
 		*/
 	
 		'db'=>array(
-			'connectionString' => 'sqlsrv:Server=192.168.4.245;Database=Gymhc_20',			
+			'connectionString' => 'sqlsrv:Server=192.168.4.245;Database=Gymhc',			
 			'username' => 'sa',
 			'password' => 'sistemas',
 			'charset' => 'utf8',

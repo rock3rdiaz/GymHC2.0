@@ -14,7 +14,7 @@
 
 	<div class="span3">
 		<?php echo $form->dropDownListRow( $antecedentes_ginecobstetricos, 'pf',
-					array('aco'=>'A.C.O', 'inyectable'=>'Inyectables Mes/Trimestral',
+					array( 'no aplica'=>'No aplica', 'aco'=>'A.C.O', 'inyectable'=>'Inyectables Mes/Trimestral',
 							'diu'=>'DIU', 'preservativos'=>'Preservativos'),
 					array('class'=>'span3', 'ng-disabled'=>'validateReproductiveBackground()' ) ); ?>
 	</div>

@@ -62,13 +62,13 @@ class MedidasFisicas extends CActiveRecord
 	{
 		return array(
 			'idMedidas_fisicas' => 'Id Medidas Fisicas',
-			'ta' => 'Ta',
+			'ta' => 'Ta (cm)',
 			'fc' => 'Fc',
 			'fr' => 'Fr',
-			'peso' => 'Peso',
+			'peso' => 'Peso (kg)',
 			'talla' => 'Talla',
 			'imc' => 'Imc',
-			'peso_ideal' => 'Peso Ideal',
+			'peso_ideal' => 'Peso Ideal (kg)',
 			'gasto_basal_energia' => 'Gasto Basal Energia',
 		);
 	}

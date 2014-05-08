@@ -1,12 +1,16 @@
 <div class="row">
 	<div class="span2">
 		<?php echo $form->textFieldRow($medidas_antropometricas, 'talla',
-						array('class'=>'span2')); ?>
+						array('class'=>'span2',
+							'ng-model'=>'physical_examination.ta',
+							'ng-blur'=>'setImc()')); ?>
 	</div>
 
 	<div class="span2">
 		<?php echo $form->textFieldRow($medidas_antropometricas, 'peso_actual',
-						array('class'=>'span2')); ?>
+						array('class'=>'span2',
+							'ng-model'=>'physical_examination.weight',
+							'ng-blur'=>'setImc()')); ?>
 	</div>
 
 	<div class="span2">
@@ -26,7 +30,8 @@
 
 	<div class="span2">
 		<?php echo $form->textFieldRow($medidas_antropometricas, 'imc',
-						array('class'=>'span2')); ?>
+						array('class'=>'span2',
+							'ng-model'=>'physical_examination.imc')); ?>
 	</div>
 </div>
 

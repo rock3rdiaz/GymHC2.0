@@ -1,6 +1,6 @@
 <?php
 
-class CitaController extends Controller
+class ExamenController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -26,17 +26,13 @@ class CitaController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'xHRGetUserByIdentification'),
-				'users'=>array( Yii::app()->getSession()->get('empleado')->login ),
-			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array( Yii::app()->getSession()->get('empleado')->login ),
+				'users'=>array(Yii::app()->getSession()->get('empleado')->login),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array( 'admin', 'cancell' ),
-				'users'=>array( Yii::app()->getSession()->get('empleado')->login ),
+				'actions'=>array('admin','delete'),
+				'users'=>array(Yii::app()->getSession()->get('empleado')->login),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -61,30 +57,22 @@ class CitaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model = new Cita();
-		$listado_empleados_habiles = Empleado::model()
-									->getListMedicalEmployees();
-		$usuario = new VUsuarios();
+		$model=new Examen;
+		$em = EvaluacionMedica::model()->findAll( array( 'order'=>'fecha_hora desc' ) );
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Cita']))
+		if(isset($_POST['Examen']))
 		{
-			$model->attributes=$_POST['Cita'];
-			$model->estado = 'pendiente';
-			
-			if( $model->save() ){
-
-				Yii::app()->user->setFlash('success', '<strong>:)!</strong> Cita asignada correctamente.');
-				$this->redirect(array('admin'));
-			}
+			$model->attributes=$_POST['Examen'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->idExamen));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-			'usuario'=>$usuario,
-			'listado_empleados_habiles'=>$listado_empleados_habiles,
+			'em'=>$em,
 		));
 	}
 
@@ -96,28 +84,19 @@ class CitaController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$listado_empleados_habiles = Empleado::model()
-									->getListMedicalEmployees();
-		$usuario = VUsuarios::model()->findByPk( $model->idVUsuario );
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Cita']))
+		if(isset($_POST['Examen']))
 		{
-			$model->attributes=$_POST['Cita'];
-			
-			if($model->save()){
-
-				Yii::app()->user->setFlash('success', '<strong>:)!</strong> Cita actualizada correctamente.');
-				$this->redirect(array('admin'));
-			}
+			$model->attributes=$_POST['Examen'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->idExamen));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
-			'usuario'=>$usuario,
-			'listado_empleados_habiles'=>$listado_empleados_habiles,
 		));
 	}
 
@@ -146,7 +125,7 @@ class CitaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Cita');
+		$dataProvider=new CActiveDataProvider('Examen');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -157,30 +136,14 @@ class CitaController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Cita('search');
+		$model=new Examen('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Cita']))
-			$model->attributes=$_GET['Cita'];
+		if(isset($_GET['Examen']))
+			$model->attributes=$_GET['Examen'];
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
-	}
-
-	/**
-	 * @summary: Accion que permite cancelar una cita dado su id
-	 * @param  [int] $id [Id de la cita a cancelar]
-	 * @return [type]     [description]
-	 */
-	public function actionCancell( $id ){
-
-		$model = $this->loadModel( $id );
-
-		$model->estado = 'cancelada';
-		$model->update( array( 'estado' ) );
-
-		Yii::app()->user->setFlash('success', '<strong>:)!</strong> Cita cancelada correctamente.');
-		$this->redirect( array( 'admin' ) );
 	}
 
 	/**
@@ -190,7 +153,7 @@ class CitaController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Cita::model()->findByPk($id);
+		$model=Examen::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -202,23 +165,10 @@ class CitaController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='cita-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='examen-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-	}
-
-	/**
-	 * @summary: Metodo ajax que retorna via json un objeto 'VUsuarios' dada la identificacion del mismo
-	 * @return [json] $data [VUsuario]
-	 */
-	public function actionXHRGetUserByIdentification(){
-
-		$identification = CJSON::decode( $_GET['identification'] );
-
-		$user = VUsuarios::model()->findByAttributes( array( 'identificacion'=>"{$identification}" ) );
-
-		echo CJSON::encode( $user );
 	}
 }

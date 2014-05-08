@@ -24,6 +24,21 @@
 			<?php echo $this->renderPartial( '_datosCitas', array( 'citas_programadas'=>$citas_programadas, ) ); ?>
 		</fieldset>
 
+		<!-- Evaluaciones medicas existentes -->
+		<div ng-show='medical_evaluations.count > 0'>
+			<fieldset>
+				<legend>Evaluaciones m&eacute;dicas realizadas al paciente</legend>
+
+				<ul>
+					<li ng-repeat='e in medical_evaluations.elements'>
+						<a href="{{ medical_evaluations.url_pdf }}&id={{ e.idEvaluacion_medica }}&type=em" target="_blank">
+							{{ e.fecha_hora }}
+						</a>
+					</li>
+				</ul>
+			</fieldset>
+		</div>
+
 		<!-- Datos del paciente -->
 		<fieldset>
 			<legend>Datos del paciente</legend>
