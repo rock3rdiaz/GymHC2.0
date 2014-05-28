@@ -19,7 +19,7 @@ class FisioModule extends CWebModule
 		$controller->menu_title = 'FISIOTERAPEUTA';
 		$controller->brand_url_menu = '/fisio/default/index';
 
-		if(parent::beforeControllerAction($controller, $action)
+		if(parent::beforeControllerAction($controller, $action))
 		{
 			return $controller->menu_items = array(
                 array('label'=>'Trabajo con pacientes', 'url'=>'#', 'icon'=>'user',

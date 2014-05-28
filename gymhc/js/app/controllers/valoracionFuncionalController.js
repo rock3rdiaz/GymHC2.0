@@ -20,6 +20,8 @@ gymhc.controller( 'valoracionFuncionalController', ['$scope', '$http', 'Util', f
         elements: new Array()
     };
 
+    $scope.medidas_antropometricas = {};
+
 	/*Funcion que habilita los componentes que se capturaran en el back.*/
 	$scope.enabledData = function(){
 		util.enabledData();
@@ -100,5 +102,25 @@ gymhc.controller( 'valoracionFuncionalController', ['$scope', '$http', 'Util', f
            console.info( $scope.medical_evaluations );
         } );
     };
+
+    /**
+     * @summary: Funcion que permite calcular el valor de entrenamiento 1. 
+     * Calculos basados en formula medica proporcionada por la fisioterapeuta
+     * @return {[type]} [description]
+     */
+    $scope.setValPorc1 = function(){
+
+        $scope.medidas_antropometricas.val_porc_e1 = [ ( $scope.medidas_antropometricas.fcm - $scope.medidas_antropometricas.fcr ) * $scope.medidas_antropometricas.porc_e1 ] - $scope.medidas_antropometricas.fcr
+    }
+
+    /**
+     * @summary: Funcion que permite calcular el valor de entrenamiento 2. 
+     * Calculos basados en formula medica proporcionada por la fisioterapeuta
+     * @return {[type]} [description]
+     */
+    $scope.setValPorc2 = function(){
+
+        $scope.medidas_antropometricas.val_porc_e2 = [ ( $scope.medidas_antropometricas.fcm - $scope.medidas_antropometricas.fcr ) * $scope.medidas_antropometricas.porc_e2 ] - $scope.medidas_antropometricas.fcr
+    }
 
 }]);
